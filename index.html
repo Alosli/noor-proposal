@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Noor ❤️</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #fce4ec;
+            color: #d81b60;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #d81b60;
+            transform: rotate(-45deg);
+            animation: float 5s infinite ease-in-out;
+        }
+        .heart:before, .heart:after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #d81b60;
+            border-radius: 50%;
+        }
+        .heart:before {
+            top: -10px;
+            left: 0;
+        }
+        .heart:after {
+            left: 10px;
+            top: 0;
+        }
+        @keyframes float {
+            0% { transform: translateY(0) rotate(-45deg); opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { transform: translateY(-100vh) rotate(-45deg); opacity: 0; }
+        }
+        .container {
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        .love-note {
+            display: none;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+        .timeline, .reasons {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            width: 80%;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .proposal-button {
+            background-color: #d81b60;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .no-button {
+            display: inline-block;
+            margin-left: 10px;
+            color: #d81b60;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <h1>نور، أنتِ نوري وحياتي! ❤️</h1>
+        <p>كل لحظة معك هي كنز، وكل ذكرى هي قطعة من الأبدية...</p>
+        
+        <div class="timeline">
+            <h2>رحلتنا معًا</h2>
+            <p>📅 23 إبريل 2024 - أول حديث بيننا</p>
+            <p>❤️ 19 مايو 2024 - اعترفت لك بحبي</p>
+            <p>🌙 6 ديسمبر 2024 - خطبتك رسميًا</p>
+            <p>💍 واليوم... أطلب منك أن تكوني لي إلى الأبد!</p>
+        </div>
+        
+        <div class="reasons">
+            <h2>لماذا أريد الزواج منك؟</h2>
+            <p>🌟 لأنك نوري وسط الظلام</p>
+            <p>💖 لأنك تعطينني حبًا بلا شروط</p>
+            <p>🎶 لأن صوتك هو نغمة سعادتي</p>
+            <p>🏡 لأنك بيتي، وأينما كنتِ، أشعر أني في المكان الصحيح</p>
+        </div>
+        
+        <button class="proposal-button" onclick="showLoveNote()">نور، هل تتزوجيني؟ 💍</button>
+        <span class="no-button" onclick="shakeButton()">لا</span>
+        
+        <p class="love-note" id="love-note">أنا أحبك أكثر مما يمكن للكلمات أن تصفهِ، وأريدك بجانبي إلى الأبد! ❤️</p>
+    </div>
+    
+    <script>
+        function showLoveNote() {
+            document.getElementById('love-note').style.display = 'block';
+        }
+        function shakeButton() {
+            alert("حاول مجددًا، الخيار الوحيد هو نعم! 😆");
+        }
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+            document.querySelector(".background").appendChild(heart);
+            setTimeout(() => heart.remove(), 5000);
+        }
+        setInterval(createHeart, 300);
+    </script>
+    
+</body>
+</html>
